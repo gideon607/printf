@@ -110,7 +110,7 @@ typedef struct fmt fmt_t;
 int is_digit(char);
 int is_printable(char);
 int append_hexadecimal_code(char, char[], int);
-long int convert_size_unsigned(unsigned long int num, int size);
+long int convert_size_unsigned_int(unsigned long int num, int size);
 long int convert_size_numbers(long int num, int size);
 
 #endif /* MAIN_H */
