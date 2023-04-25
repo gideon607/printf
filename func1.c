@@ -15,7 +15,7 @@ int print_strings(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int length = 0, i;
-	char *str = var_arg(types, char *);
+	char *str = va_arg(types, char *);
 
 	UNUSED(buffer);
 	UNUSED(size);
@@ -72,7 +72,7 @@ int print_strings(va_list types, char buffer[],
 int print_char(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	char c = var_arg(types, int);
+	char c = va_arg(types, int);
 
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
@@ -117,7 +117,7 @@ int print_int(va_list types, char buffer[],
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
-	long int n = var_arg(types, long int);
+	long int n = va_arg(types, long int);
 	unsigned long int num;
 
 	n = convert_size_numbers(n, size);
@@ -169,7 +169,7 @@ int print_binary(va_list types, char buffer[],
 	UNUSED(flags);
 	UNUSED(width);
 
-	n = var_arg(types, unsigned int);
+	n = va_arg(types, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
 	for (i = 1; i < 32; i++)

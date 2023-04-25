@@ -15,7 +15,7 @@ int print_non_printables(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
-	char *str = var_arg(types, char *);
+	char *str = va_arg(types, char *);
 
 	UNUSED(precision);
 	UNUSED(size);
@@ -59,7 +59,7 @@ int print_pointers(va_list types, char buffer[],
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
 	unsigned long num_addrs;
 	char mapped_to[] = "0123456789abcdef";
-	void *addrs = var_arg(types, void *);
+	void *addrs = va_arg(types, void *);
 
 	UNUSED(size);
 	UNUSED(width);
@@ -119,7 +119,7 @@ int print_inreverse(va_list types, char buffer[],
 	UNUSED(flags);
 	UNUSED(width);
 
-	str = var_arg(types, char *);
+	str = va_arg(types, char *);
 
 	if (str == NULL)
 	{
@@ -163,7 +163,7 @@ int print_rot13strings(va_list types, char buffer[],
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	str = var_arg(types, char *);
+	str = va_arg(types, char *);
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);

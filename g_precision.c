@@ -29,7 +29,7 @@ int get_precision(const char *format, int *i, va_list list)
 		 else if (format[curr_ipre] == '*')
 		 {
 			  curr_ipre++;
-			  precision = var_arg(list, int);
+			  precision = va_arg(list, int);
 			  break;
 		 }
 
